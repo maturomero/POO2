@@ -1,0 +1,7 @@
+matias;3.333;Facil;0.0
+matias;5.0;Medio;0.0
+matias;3.333;Facil;0.0
+matias;5.0;Medio;0.0
+matias;3.333;Facil;0.0
+Matias;3.333;Facil;0.0
+matias;21.071;Facil;53.572
