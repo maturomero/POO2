@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AppMovil/AppMovil.iml" filepath="$PROJECT_DIR$/AppMovil/AppMovil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Arquitectura/Arquitectura.iml" filepath="$PROJECT_DIR$/Arquitectura/Arquitectura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Atributos_estaticos/Atributos_estaticos.iml" filepath="$PROJECT_DIR$/Atributos_estaticos/Atributos_estaticos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjFarmacia/EjFarmacia.iml" filepath="$PROJECT_DIR$/EjFarmacia/EjFarmacia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/POO.iml" filepath="$PROJECT_DIR$/.idea/POO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Preguntados/Preguntados.iml" filepath="$PROJECT_DIR$/Preguntados/Preguntados.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Venta/Venta.iml" filepath="$PROJECT_DIR$/Venta/Venta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banco/banco.iml" filepath="$PROJECT_DIR$/banco/banco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cicli/cicli.iml" filepath="$PROJECT_DIR$/cicli/cicli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ciclista/ciclista.iml" filepath="$PROJECT_DIR$/ciclista/ciclista.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dijsktra/dijsktra.iml" filepath="$PROJECT_DIR$/dijsktra/dijsktra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicio_1/ejercicio_1.iml" filepath="$PROJECT_DIR$/ejercicio_1/ejercicio_1.iml" />
+    </modules>
+  </component>
+</project>
