@@ -19,7 +19,16 @@ public class Juego {
         while (true) {
             interfaz.clearScreen();
 
+            // Mensaje para salir
+            interfaz.mostrarMensaje("Escribe 'salir' en cualquier momento para terminar el juego.");
+
             String nombre = interfaz.obtenerNombreUsuario();
+
+            // Verificamos si el usuario desea salir
+            if (nombre.equalsIgnoreCase("salir")) {
+                interfaz.mostrarMensaje("Has decidido salir del juego. ¡Gracias por jugar!");
+                break; // Salimos del bucle y finalizamos el juego
+            }
 
             interfaz.clearScreen();
             int[] dificultadDatos = interfaz.seleccionarDificultad();
@@ -46,6 +55,13 @@ public class Juego {
 
             interfaz.mostrarMensaje("EL HISTORIAL DE JUGADORES: ");
             historial.mostrarHistorial();
+
+            // Preguntar si quiere seguir jugando o salir
+            String continuar = interfaz.obtenerRespuesta("¿Deseas jugar otra ronda? Escribe 'salir' para terminar o cualquier otra cosa para continuar.");
+            if (continuar.equalsIgnoreCase("salir")) {
+                interfaz.mostrarMensaje("Has decidido salir del juego. ¡Gracias por jugar!");
+                break;
+            }
         }
     }
 
@@ -68,13 +84,9 @@ public class Juego {
         }
     }
 
-    public static void main(String[] args) {
-        try {
-            Juego juego = new Juego("preguntas.txt");
-            juego.iniciar();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 }
+
+
+
 

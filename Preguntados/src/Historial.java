@@ -26,6 +26,7 @@ public class Historial {
             for (String[] datos : historialData) {
                 System.out.printf("Nombre: %s, Puntaje: %s, Dificultad: %s, Tiempo: %s%n", datos[0], datos[1], datos[2], datos[3]);
             }
+            System.out.println("ENTER para seguir jugando");
         } catch (IOException e) {
             System.out.println("El archivo de historial no se encontró.");
         }

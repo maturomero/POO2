@@ -40,7 +40,7 @@ public class Interfaz {
         System.out.println(mensaje);
     }
 
-    public String obtenerRespuesta() {
+    public String obtenerRespuesta(String s) {
         return scanner.nextLine();
     }
 
@@ -57,4 +57,3 @@ public class Interfaz {
         }
     }
 }
-

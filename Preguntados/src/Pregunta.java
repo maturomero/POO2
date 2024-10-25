@@ -3,34 +3,32 @@ import java.util.*;
 
 public class Pregunta {
 
-    private List<String[]> cuestionario;
-    private int cont;
+    private List<String[]> cuestionarioCompleto;
     private BufferedReader archivo;
 
     public Pregunta(String archivoPreguntas) throws IOException {
         archivo = new BufferedReader(new FileReader(archivoPreguntas));
-        cuestionario = new ArrayList<>();
-        cont = 0;
+        cuestionarioCompleto = new ArrayList<>();
+        cargarPreguntas();
     }
 
-    public List<String[]> generarPreguntas(int cantPreguntas) throws IOException {
-        cuestionario.clear();
+    // Carga todas las preguntas al principio para mayor eficiencia
+    private void cargarPreguntas() throws IOException {
         String line;
-        int contador = 0;
-
         while ((line = archivo.readLine()) != null) {
             String[] datosPregunta = line.split(";");
             String pregunta = datosPregunta[0];
             String[] opciones = Arrays.copyOfRange(datosPregunta, 1, datosPregunta.length - 1);
             String respuestaCorrecta = datosPregunta[datosPregunta.length - 1];
-            cuestionario.add(new String[]{pregunta, Arrays.toString(opciones), respuestaCorrecta});
-
-            contador++;
-            if (contador >= cantPreguntas) {
-                break;
-            }
+            cuestionarioCompleto.add(new String[]{pregunta, Arrays.toString(opciones), respuestaCorrecta});
         }
-        return cuestionario;
+    }
+
+    public List<String[]> generarPreguntas(int cantPreguntas) {
+        // Barajamos la lista completa de preguntas para que queden en orden aleatorio
+        Collections.shuffle(cuestionarioCompleto);
+        // Devolvemos una sublista con la cantidad deseada de preguntas
+        return new ArrayList<>(cuestionarioCompleto.subList(0, Math.min(cantPreguntas, cuestionarioCompleto.size())));
     }
 
     public int verificarPreguntas(List<String[]> preguntas, Interfaz interfaz) {
@@ -42,7 +40,7 @@ public class Pregunta {
                 interfaz.mostrarMensaje((i + 1) + ". " + opciones[i]);
             }
 
-            String respuesta = interfaz.obtenerRespuesta();
+            String respuesta = interfaz.obtenerRespuesta("¿Deseas jugar otra ronda? Escribe 'salir' para terminar o cualquier otra cosa para continuar.");
             if (respuesta.equals(pregunta[2])) {
                 interfaz.mostrarMensaje("Respuesta correcta");
                 correctas++;
@@ -58,4 +56,9 @@ public class Pregunta {
         archivo.close();
     }
 }
+
+
+
+
+
 
